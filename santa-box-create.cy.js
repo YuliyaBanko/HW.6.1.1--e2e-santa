@@ -17,7 +17,7 @@ describe("user can create a box and run it", () => {
   let boxKey;
 
   it("user logins and creates a box", () => {
-    cy.loginAsUser(users.userAutor);  // Используем кастомную команду логина
+    cy.loginAsUser(users.userAutor); 
     cy.contains("Создать коробку").should('be.visible').click({ force: true });
     cy.createBox(newBoxName, minAmount, maxAmount, currency); // Используем кастомную команду для создания коробки
     cy.get(dashboardPage.createdBoxName).should("have.text", newBoxName);
